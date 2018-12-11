@@ -5,7 +5,7 @@ import createToken from '../../utils/index'
 
 const create = async (req, res) => {
   try {
-    const user = await User.findOne({ userName: req.body.userName }).select('+password +sessionId')
+    const user = await User.findOne({ username: req.body.username }).select('+password +sessionId')
     if (user) {
       const password = req.body.password
       const hash = user.password
@@ -14,7 +14,7 @@ const create = async (req, res) => {
       if (match) {
         const payload = {
           id: user._id,
-          userName: user.userName,
+          username: user.username,
           sessionId
         }
         const token = await createToken(payload)

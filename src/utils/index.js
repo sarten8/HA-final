@@ -22,7 +22,7 @@ const handleErr = (err, req, res, next) => {
 
 const isLoggedIn = async (req, res, next) => {
   try {
-    const user = await User.findOne({ userName: req.user.userName }).select('+sessionId')
+    const user = await User.findOne({ username: req.user.username }).select('+sessionId')
     req.dbUser = user
     if (!user) {
       res.status(401).json({ message: 'User is not logged in' })

@@ -9,7 +9,7 @@ const create = async (req, res) => {
     const newUser = await user.save()
     const payload = {
       id: newUser._id,
-      userName: newUser.userName,
+      username: newUser.username,
       sessionId: newUser.sessionId
     }
     const token = await createToken(payload)
@@ -17,7 +17,7 @@ const create = async (req, res) => {
       user: {
         id: newUser._id,
         email: newUser.email,
-        userName: newUser.userName
+        username: newUser.username
       },
       token
     })

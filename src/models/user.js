@@ -12,14 +12,14 @@ const UserSchema = new mongoose.Schema(
 			required: [true, 'e-mail required'],
 			validate: validator.isEmail
 		},
-		userName: {
+		username: {
 			type: String,
 			unique: true,
 			lowercase: true,
-			required: [true, 'Username required'],
+			required: [true, 'username required'],
 			minlength: 3,
 			maxlength: 16,
-			validate: userName => !userName.match(/\W+/)
+			validate: username => !username.match(/\W+/)
 		},
 		password: {
 			type: String,

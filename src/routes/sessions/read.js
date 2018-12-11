@@ -6,7 +6,7 @@ const read = async (req, res) => {
     const newSessionId = uuid()
     const payload = {
       email: req.user.email,
-      userName: req.user.userName,
+      username: req.user.username,
       sessionId: newSessionId
     }
     const token = await createToken(payload)
