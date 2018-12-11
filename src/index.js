@@ -1,9 +1,12 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import routes from './routes/index'
+import cors from 'cors'
 
 const uri = 'mongodb://localhost:27017/hackacademy_final'
 const options = { useNewUrlParser: true, reconnectTries: 10, reconnectInterval: 500, }
+
+app.use(cors())
 
 const app = express()
 const server = () => {
