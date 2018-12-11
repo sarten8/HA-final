@@ -6,9 +6,10 @@ import cors from 'cors'
 const uri = 'mongodb://localhost:27017/hackacademy_final'
 const options = { useNewUrlParser: true, reconnectTries: 10, reconnectInterval: 500, }
 
+const app = express()
+
 app.use(cors())
 
-const app = express()
 const server = () => {
     app.listen(3000, console.log('Server en port 3000'))
 }
