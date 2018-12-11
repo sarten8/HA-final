@@ -1,4 +1,5 @@
 import mongoose, { model } from 'mongoose'
+import mongoosePaginate from 'mongoose-paginate'
 const ObjectId = mongoose.Schema.Types.ObjectId
 
 const TweetSchema = new mongoose.Schema(
@@ -22,6 +23,8 @@ const TweetSchema = new mongoose.Schema(
 		}
 	}
 )
+
+TweetSchema.plugin(mongoosePaginate)
 
 TweetSchema.post('save', (tweet, next) => {
 	tweet
