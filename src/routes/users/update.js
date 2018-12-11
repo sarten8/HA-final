@@ -10,6 +10,4 @@ const update = async (req, res) => {
   }
 }
 
-// original 1D252C
-
 export default update
