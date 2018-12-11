@@ -17,10 +17,7 @@ const TweetSchema = new mongoose.Schema(
 		}
 	},
 	{
-		timestamps: {
-			createdAt: 'created_at',
-			updatedAt: 'updatedAt'
-		}
+		timestamps: true
 	}
 )
 

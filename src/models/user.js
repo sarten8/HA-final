@@ -29,10 +29,7 @@ const UserSchema = new mongoose.Schema(
 		sessionId: { type: String, select: false }
 	},
 	{
-		timestamps: {
-			createdAt: 'created_at',
-			updatedAt: 'updatedAt'
-		}
+		timestamps: true
 	}
 )
 

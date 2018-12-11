@@ -6,9 +6,12 @@ const readAll = async (req, res) => {
 		let page = req.query.page
 		let limit = req.query.limit
 		if (!validator.isNumeric(page)) res.status(500).json({ message: `Error: ${page} is not numeric` })
-    if (!validator.isNumeric(limit)) res.status(500).json({ message: `Error: ${limit} is not numeric` })
-    page = parseInt(page, 10)
-    limit = parseInt(limit, 10)
+    	if (!validator.isNumeric(limit)) res.status(500).json({ message: `Error: ${limit} is not numeric` })
+    	page = parseInt(page, 10)
+		limit = parseInt(limit, 10)
+		if ( page < 1 ) page = 1
+		if ( limit > 300 ) limit = 300
+		if ( limit < 1 ) limit = 20
 		const query = {}
 		const options = {
 			sort: { updateAt: 1 },
@@ -18,7 +21,7 @@ const readAll = async (req, res) => {
 		}
 		const tweets = await Tweet.paginate(query, options)
 		if (!tweets) res.status(404).json({ message: 'Tweets not found' })
-		else res.json(tweets)
+		else res.json(tweets.docs)
 	} catch (err) {
 		res.status(500).json({ message: `Error: ${err}` })
 	}
