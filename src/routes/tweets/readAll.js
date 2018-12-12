@@ -13,6 +13,7 @@ const readAll = async (req, res) => {
 		if ( limit > 300 ) limit = 300
 		if ( limit < 1 ) limit = 20
 		const query = {}
+		if (req.query.search) query['text'] = new RegExp(req.query.search, 'i')
 		const options = {
 			sort: { updateAt: 1 },
 			populate: 'author',
