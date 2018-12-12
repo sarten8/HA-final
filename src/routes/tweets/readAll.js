@@ -3,8 +3,8 @@ import validator from 'validator'
 
 const readAll = async (req, res) => {
 	try {
-		let page = req.query.page
-		let limit = req.query.limit
+		let page = req.query.page || '0'
+		let limit = req.query.limit || '20'
 		if (!validator.isNumeric(page)) res.status(500).json({ message: `Error: ${page} is not numeric` })
     	if (!validator.isNumeric(limit)) res.status(500).json({ message: `Error: ${limit} is not numeric` })
     	page = parseInt(page, 10)
