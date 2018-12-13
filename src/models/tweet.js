@@ -1,4 +1,4 @@
-import mongoose, { model } from 'mongoose'
+import mongoose from 'mongoose'
 import mongoosePaginate from 'mongoose-paginate'
 const ObjectId = mongoose.Schema.Types.ObjectId
 

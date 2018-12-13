@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "backpack",
     "build": "backpack build",
-    "start": "node build/main"
+    "start": "node build/main",
+    "eslint": "eslint ./src/"
   },
   "dependencies": {
     "backpack-core": "^0.8.3",
@@ -21,5 +22,8 @@
     "mongoose-paginate": "^5.0.3",
     "uuid": "^3.3.2",
     "validator": "^10.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0"
   }
 }
