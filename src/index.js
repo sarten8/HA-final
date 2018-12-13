@@ -8,7 +8,7 @@ const options = { useNewUrlParser: true, reconnectTries: 10, reconnectInterval: 
 
 const app = express()
 
-app.use(cors())
+app.options('*', cors())
 
 const server = () => {
     app.listen(3000, console.log('Server en port 3000'))
