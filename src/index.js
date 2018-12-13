@@ -8,7 +8,6 @@ const options = { useNewUrlParser: true, reconnectTries: 10, reconnectInterval: 
 
 const app = express()
 
-app.options('*', cors())
 app.use(cors())
 
 const server = () => {

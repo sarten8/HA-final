@@ -5,7 +5,9 @@
   "author": "sarten8 <sarten8@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "backpack"
+    "dev": "backpack",
+    "build": "backpack build",
+    "start": "node build/main"
   },
   "dependencies": {
     "backpack-core": "^0.8.3",

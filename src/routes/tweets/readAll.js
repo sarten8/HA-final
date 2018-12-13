@@ -15,7 +15,7 @@ const readAll = async (req, res) => {
 		const query = {}
 		if (req.query.search) query['text'] = new RegExp(req.query.search, 'i')
 		const options = {
-			sort: { updateAt: 1 },
+			sort: { updatedAt: -1 },
 			populate: 'author',
 			limit,
 			page
