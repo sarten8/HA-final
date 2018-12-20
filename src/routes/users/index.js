@@ -9,36 +9,36 @@ import remove from './remove'
 import update from './update'
 
 const routesUsers = app => {
-	app.get(
-		'/users/:id',
-		checkJwt({ secret: options.SECRET_KEY }),
-		handleErr,
-		isLoggedIn,
-		read
-	)
-	app.get(
-		'/users',
-		checkJwt({ secret: options.SECRET_KEY }),
-		handleErr,
-		isLoggedIn,
-		readAll
-	)
-	app.put(
-		'/users',
-		checkJwt({ secret: options.SECRET_KEY }),
-		handleErr,
-		isLoggedIn,
-		bodyParser.json(),
-		update
-	)
-	app.delete(
-		'/users',
-		checkJwt({ secret: options.SECRET_KEY }),
-		handleErr,
-		isLoggedIn,
-		remove
-	)
-	app.post('/users', bodyParser.json(), create)
+  app.get(
+    '/users/:id',
+    checkJwt({ secret: options.SECRET_KEY }),
+    handleErr,
+    isLoggedIn,
+    read
+  )
+  app.get(
+    '/users',
+    checkJwt({ secret: options.SECRET_KEY }),
+    handleErr,
+    isLoggedIn,
+    readAll
+  )
+  app.put(
+    '/users',
+    checkJwt({ secret: options.SECRET_KEY }),
+    handleErr,
+    isLoggedIn,
+    bodyParser.json(),
+    update
+  )
+  app.delete(
+    '/users',
+    checkJwt({ secret: options.SECRET_KEY }),
+    handleErr,
+    isLoggedIn,
+    remove
+  )
+  app.post('/users', bodyParser.json(), create)
 }
 
 export default routesUsers
